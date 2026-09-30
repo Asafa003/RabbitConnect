@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Design tokens for RabbitConnect.
+ * Every value below is taken from the Figma landing page (file MWjo8zJ1x9PQiq4rQrRP4U, node 16:4).
+ * Components should reference these tokens (e.g. `bg-primary`, `text-ink-muted`) rather than raw hex values.
+ */
+@theme {
+  /* Surfaces */
+  --color-background: #fdf9ee;
+  --color-surface: #f7f3e8; /* stats band */
+  --color-surface-raised: #f2eee3; /* CTA card */
+  --color-surface-strong: #e6e2d8; /* footer, hero image frame */
+
+  /* Lines */
+  --color-outline: #707974; /* avatar ring */
+  --color-outline-variant: #c0c9c3; /* card, header and footer borders */
+
+  /* Brand greens */
+  --color-primary: #003629; /* buttons, headings, logo */
+  --color-forest: #1b4d3e; /* solution band, play-button ring */
+  --color-emerald: #176b4d; /* "66%" stat */
+  --color-mint: #a4f3cd; /* pill, step icon tiles, eyebrow on dark */
+  --color-mint-soft: #baeed9; /* decorative hero blob */
+  --color-mint-muted: #8abda9; /* body copy on the dark band */
+  --color-mint-ink: #207153; /* text on the mint pill */
+
+  /* Accents */
+  --color-brown: #4c2400; /* eyebrow on light, "2%" stat */
+  --color-rose-tint: #ffdad6; /* problem card icon tiles */
+
+  /* Text */
+  --color-ink: #1c1c15;
+  --color-ink-muted: #404945;
+
+  /* Radii (Tailwind's rounded-lg/xl/2xl cover 8/12/16) */
+  --radius-hero: 40px;
+  --radius-cta: 48px;
+
+  /* Type scale: size / line-height */
+  --text-display: 60px;
+  --text-display--line-height: 60px;
+  --text-stat: 48px;
+  --text-stat--line-height: 48px;
+  --text-headline: 36px;
+  --text-headline--line-height: 40px;
+  --text-logo: 20px;
+  --text-logo--line-height: 28px;
+  --text-body: 16px; /* paragraph copy in cards and footer */
+  --text-body--line-height: 26px;
+
+  /* Letter spacing */
+  --tracking-pill: 0.8px;
+  --tracking-label: 1.6px;
+  --tracking-eyebrow: 3.2px;
+
+  /* Layout */
+  --breakpoint-wide: 90rem; /* 1440px: content width matches the Figma frame from here up */
+  --container-page: 1440px;
+  --container-content: 1200px; /* stat and card grids */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background font-body text-ink-muted;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 }
