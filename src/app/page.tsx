@@ -1,8 +1,10 @@
-import { Cta } from "@/components/sections/cta";
+import { Benefits } from "@/components/sections/benefits";
+import { Contact } from "@/components/sections/contact";
 import { Hero } from "@/components/sections/hero";
+import { Industry } from "@/components/sections/industry";
 import { Problems } from "@/components/sections/problems";
 import { Solution } from "@/components/sections/solution";
-import { Stats } from "@/components/sections/stats";
+import { Waitlist } from "@/components/sections/waitlist";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -12,10 +14,12 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
-        <Stats />
+        <Benefits />
         <Problems />
         <Solution />
-        <Cta />
+        <Industry />
+        <Waitlist />
+        <Contact />
       </main>
       <SiteFooter />
     </>

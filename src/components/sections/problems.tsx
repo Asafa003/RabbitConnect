@@ -3,17 +3,20 @@ import { problems } from "@/lib/site";
 
 export function Problems() {
   return (
-    <section className="mx-auto flex max-w-page flex-col gap-12 px-4 py-16 sm:px-6 lg:gap-16 lg:px-10 lg:py-24">
+    <section
+      id="challenge"
+      className="mx-auto scroll-mt-20 flex max-w-page flex-col gap-12 px-4 py-16 sm:px-6 lg:gap-16 lg:px-10 lg:py-24">
       <div className="flex flex-col items-center gap-4 text-center">
-        <p className="text-base font-bold tracking-eyebrow text-brown uppercase">
+        <p className="text-sm font-bold tracking-label text-brown uppercase">
           The Challenge
         </p>
-        <h2 className="font-heading text-base text-primary">
-          The Problems We Solve
+        <h2 className="max-w-2xl font-heading text-3xl font-semibold text-balance text-primary lg:text-headline">
+          The Problems We&apos;re Solving
         </h2>
         <p className="max-w-2xl text-base">
           Traditional livestock trading is fragmented, opaque, and inefficient
-          for small-scale producers. We&apos;re fixing the root causes.
+          for small-scale producers. We&apos;re setting out to fix the root
+          causes.
         </p>
       </div>
 
@@ -27,7 +30,7 @@ export function Problems() {
               <Icon icon={problem.icon} />
             </div>
             <div className="flex flex-col gap-2">
-              <h3 className="font-heading text-base text-ink">
+              <h3 className="font-heading text-lg font-bold text-ink lg:text-xl">
                 {problem.title}
               </h3>
               <p className="text-body">{problem.body}</p>

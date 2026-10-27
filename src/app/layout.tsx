@@ -12,10 +12,29 @@ const openSans = Open_Sans({
   subsets: ["latin"],
 });
 
+const title = "RabbitConnect — The Rabbit Exchange for Africa";
+const description =
+  "RabbitConnect is a proposed digital marketplace connecting rabbit farmers, buyers and logistics partners through transparent pricing and secure payments. Join the waitlist and help shape it.";
+
 export const metadata: Metadata = {
-  title: "RabbitConnect — The Rabbit Exchange for Africa",
-  description:
-    "Bridging the gap between rural producers and global commercial logistics with speed, trust, and transparency. Join 3.5M+ farmers across the continent.",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  ),
+  title,
+  description,
+  openGraph: {
+    type: "website",
+    siteName: "RabbitConnect",
+    title,
+    description,
+    images: [{ url: "/images/hero-rabbit.jpg", alt: "Rabbit farming in Africa" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/hero-rabbit.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

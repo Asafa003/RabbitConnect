@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
-import { navLinks } from "@/lib/site";
+import { navLinks, waitlistHref } from "@/lib/site";
 
 const arrowRight = {
   src: "/icons/arrow-right.svg",
@@ -40,38 +39,10 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-4">
-          <ButtonLink
-            href="#"
-            variant="outline"
-            size="sm"
-            className="max-lg:hidden"
-          >
-            Buy Rabbits
-          </ButtonLink>
-          <ButtonLink
-            href="#"
-            size="sm"
-            className="max-sm:hidden"
-          >
-            Sell Rabbits
+          <ButtonLink href={waitlistHref} size="sm" className="max-sm:hidden">
+            Join Waitlist
             <Icon icon={arrowRight} />
           </ButtonLink>
-
-          {/* <div className="flex items-center gap-2 border-l border-outline-variant pl-4">
-            <div className="relative size-9 shrink-0 overflow-hidden rounded-full border border-outline">
-              <Image
-                src="/images/avatar.jpg"
-                alt=""
-                fill
-                sizes="36px"
-                className="object-cover"
-                style={{ objectPosition: "50% 25.7%" }}
-              />
-            </div>
-            <span className="hidden text-base leading-4 text-ink sm:block">
-              Taiwo David
-            </span>
-          </div> */}
 
           <button
             type="button"
@@ -117,15 +88,14 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
-          <div className="mt-2 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="#" variant="outline" size="sm">
-              Buy Rabbits
-            </ButtonLink>
-            <ButtonLink href="#" size="sm" className="sm:hidden">
-              Sell Rabbits
-              <Icon icon={arrowRight} />
-            </ButtonLink>
-          </div>
+          <ButtonLink
+            href={waitlistHref}
+            size="sm"
+            className="mt-2 sm:hidden"
+          >
+            Join Waitlist
+            <Icon icon={arrowRight} />
+          </ButtonLink>
         </nav>
       )}
     </header>

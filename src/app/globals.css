@@ -8,25 +8,25 @@
 @theme {
   /* Surfaces */
   --color-background: #fdf9ee;
-  --color-surface: #f7f3e8; /* stats band */
+  --color-surface: #f7f3e8; /* benefits and industry bands */
   --color-surface-raised: #f2eee3; /* CTA card */
   --color-surface-strong: #e6e2d8; /* footer, hero image frame */
 
   /* Lines */
-  --color-outline: #707974; /* avatar ring */
+  --color-outline: #707974; /* strong hairlines (from Figma; not currently used) */
   --color-outline-variant: #c0c9c3; /* card, header and footer borders */
 
   /* Brand greens */
   --color-primary: #003629; /* buttons, headings, logo */
-  --color-forest: #1b4d3e; /* solution band, play-button ring */
-  --color-emerald: #176b4d; /* "66%" stat */
+  --color-forest: #1b4d3e; /* ecosystem band, button hover */
+  --color-emerald: #176b4d; /* from Figma; not currently used */
   --color-mint: #a4f3cd; /* pill, step icon tiles, eyebrow on dark */
   --color-mint-soft: #baeed9; /* decorative hero blob */
   --color-mint-muted: #8abda9; /* body copy on the dark band */
   --color-mint-ink: #207153; /* text on the mint pill */
 
   /* Accents */
-  --color-brown: #4c2400; /* eyebrow on light, "2%" stat */
+  --color-brown: #4c2400; /* eyebrows on light backgrounds */
   --color-rose-tint: #ffdad6; /* problem card icon tiles */
 
   /* Text */
@@ -51,8 +51,7 @@
 
   /* Letter spacing */
   --tracking-pill: 0.8px;
-  --tracking-label: 1.6px;
-  --tracking-eyebrow: 3.2px;
+  --tracking-label: 1.6px; /* eyebrows */
 
   /* Layout */
   --breakpoint-wide: 90rem; /* 1440px: content width matches the Figma frame from here up */

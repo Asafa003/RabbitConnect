@@ -71,3 +71,28 @@ export function ButtonLink({
     />
   );
 }
+
+export function Button({
+  variant,
+  size,
+  typeface,
+  className,
+  ...props
+}: ButtonStyleOptions & ComponentProps<"button">) {
+  return (
+    <button
+      className={buttonStyles({
+        variant,
+        size,
+        typeface,
+        className: [
+          "disabled:cursor-not-allowed disabled:opacity-60",
+          className,
+        ]
+          .filter(Boolean)
+          .join(" "),
+      })}
+      {...props}
+    />
+  );
+}
